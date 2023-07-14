@@ -16,4 +16,12 @@ public abstract class Token //Clase abstracta Token, crear token para cada token
     }
 }
 
+public class PlusToken: Token
+{
+    public PlusToken():base(TokenType.plus,"+")
+    {
+        
+    }
+}
+
 
