@@ -16,8 +16,8 @@ public class Errors
 
 public enum ErrorCode
 {
-    None,
-    Expected,
-    Invalid,
-    Unknown,
+    Lexer,
+    Sintaxis,
+    Semantic,
+
 }
