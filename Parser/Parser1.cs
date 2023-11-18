@@ -1,17 +1,15 @@
-
-
 namespace Hulk;
-public class Parser1
+
+public class Parser
 {
-    public Parser1(Code Code)
+    public Parser(Code Code)
     {
         this.Code = Code;
     }
 
     //Lista de tokens 
     public Code Code { get; set; }
-    int balance_LetIn = 0;
-    int balance = 0;
+    public bool IsFunc;
 
     //Las lineas de codigo solo deben empesar con las palabras print, if, let,function o un numero
     //Lo primero que hace es preguntar cual de esas palabras es la primera y automaticamente llama al parser q corresponda
@@ -91,7 +89,7 @@ public class Parser1
             error.Add(new Errors(ErrorCode.Sintaxis, Code.LookAhead().value));
         }
 
-        return ParserD(error,epsilon);
+        return ParserD(error, epsilon);
     }
     //B --> in A | e
     public Expression ParserB(List<Errors> error, Expression epsilon)
@@ -294,7 +292,7 @@ public class Parser1
         }
         return epsilon;
     }
-    //F --> int | (A) | true | false | id | Func(H) 
+    //F --> int | (A) | true | false | id | Func(H) | @-Concat | 
     public Expression ParserFactor(List<Errors> error, Expression epsilon)
     {
 
@@ -317,8 +315,8 @@ public class Parser1
         {
             if (Code.LookAhead().name == TokenName.openP)
             {
-                Expression result = ParserH(error,new());
-                return new Log(result);
+                List<Expression> result = ParserH(error, new());              
+                return new Log(result[1]);
             }
             error.Add(new Errors(ErrorCode.Sintaxis, "("));
         }
@@ -327,11 +325,39 @@ public class Parser1
             Expression result = ParserExpression(error, epsilon);
             return new Squart(result);
         }
+        if (Code.Next(TokenName.concat))
+        {
+            return new Concat(Code.LookAhead().value);
+        }
         if (Code.Next(TokenName.number))
         {
             return new Number(double.Parse(Code.LookAhead().value));
         }
-        if (Code.Next(TokenName.PI))
+        if (Code.Next(TokenName.id))
+        {
+            foreach (var item in Context1.funcs)
+            {
+                if (item.Name == Code!.LookAhead().value)
+                {
+                    if (Code.Next(TokenName.openP))
+                    {
+                        Token f = Code.LookAhead();
+
+                        List<Expression> result = ParserH(error, new());                                    
+                        Expression func = new FuncCall(result, item);
+
+                        if (!Context1.IsDeclare_Func)                                              //!
+                        {
+                             IsFunc = true;
+                        }
+                        return func;
+                    }
+                    break;
+                }
+            }
+            return new ID(Code.LookAhead(), null!);
+        }
+        if (Code.Next(TokenName.openP))
         {
             return new Number(Math.PI);
         }
@@ -342,6 +368,15 @@ public class Parser1
         if (Code.Next(TokenName.False))
         {
             return new Bool(false);
+        }
+        if (Code.Next(TokenName.openP))
+        {
+            Expression result = ParserCode(error);
+
+            if (Code.Next(TokenName.closeP))
+                return result;
+
+            error.Add(new Errors(ErrorCode.Sintaxis, ""));
         }
 
         return null!;
