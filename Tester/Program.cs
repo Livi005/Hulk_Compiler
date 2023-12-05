@@ -1,4 +1,8 @@
-﻿using Tokenizer;
-
-PlusToken a = new();
-Console.WriteLine("Hello, World!");
+﻿namespace  Hulk;
+public class Program
+{
+    static void Main()
+    {
+        
+    }
+}

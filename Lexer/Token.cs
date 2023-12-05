@@ -2,11 +2,11 @@
 {
     public enum TokenName
     {
-        number, text,
-        plus, star, sub, div, pow, squart,
+        number, text, True, False, not,
+        add, star, sub, div, pow, squart,
         openP, closeP, openL, closeL, comilla,
-        equal, mod, menor, mayor, exc, MenorEqual, MayorEqual, EqualEqual, distint, or, and, implic, concat,
-        id, In, let, If, Else, them, print, PI, function, log, var, end, pointEqualToken, coma,
+        equal, mod, menor, mayor, exc, MenorEqual, MayorEqual, EqualEqual, distint, or, and, implic, concat,chain,
+        id, In, let, If, Else, them, print, PI, function, log, var, end, pointEqualToken, coma, sen, cos, tan,
         EOF
     }
     public enum TokenType
@@ -22,7 +22,7 @@
 
         // int potition;
 
-        public Token(TokenName name, string value, TokenType tapy)
+        public Token(TokenName name, string value, TokenType type)
         {
             this.name = name;
             this.value = value;
@@ -36,10 +36,9 @@
 
     }
 
-    public class PlusToken : Token
+    public class AddToken : Token
     {
-        
-        public PlusToken() : base(TokenName.plus, "+", TokenType.Symbol) { }
+        public AddToken() : base(TokenName.add, "+", TokenType.Symbol) { }
     }
     public class StarToken : Token
     {
@@ -146,6 +145,30 @@
     {
         public TextToken(TokenName type, string value) : base(type, value, TokenType.Text) { }
     }
+    public class TrueToken : Token
+    {
+        public TrueToken(TokenName type, string value) : base(type, value, TokenType.Keyword) { }
+    }
+    public class FalseToken : Token
+    {
+        public FalseToken(TokenName type, string value) : base(type, value, TokenType.Keyword) { }
+    }
+     public class NotToken : Token
+    {
+        public NotToken(TokenName type, string value) : base(type, value, TokenType.Keyword) { }
+    }
+    public class SenToken : Token
+    {
+        public SenToken(TokenName type, string value) : base(type, value, TokenType.Keyword) { }
+    }
+    public class CosToken : Token
+    {
+        public CosToken(TokenName type, string value) : base(type, value, TokenType.Keyword) { }
+    }
+    public class TanToken : Token
+    {
+        public TanToken(TokenName type, string value) : base(type, value, TokenType.Keyword) { }
+    }
     public class IdToken : Token
     {
         public IdToken(TokenName type, string value) : base(type, value, TokenType.Id) { }
@@ -156,51 +179,51 @@
     }
     public class InToken : Token
     {
-        public InToken(TokenName type, string value) : base(type, value,TokenType.Keyword) { }
+        public InToken(TokenName type, string value) : base(type, value, TokenType.Keyword) { }
     }
     public class IfToken : Token
     {
-        public IfToken(TokenName type, string value) : base(type, value,TokenType.Keyword) { }
+        public IfToken(TokenName type, string value) : base(type, value, TokenType.Keyword) { }
     }
     public class ElseToken : Token
     {
-        public ElseToken(TokenName type, string value) : base(type, value,TokenType.Keyword) { }
+        public ElseToken(TokenName type, string value) : base(type, value, TokenType.Keyword) { }
     }
     public class ThemToken : Token
     {
-        public ThemToken(TokenName type, string value) : base(type, value,TokenType.Keyword) { }
+        public ThemToken(TokenName type, string value) : base(type, value, TokenType.Keyword) { }
     }
     public class PiToken : Token
     {
-        public PiToken(TokenName type, string value) : base(type, value,TokenType.Keyword) { }
+        public PiToken(TokenName type, string value) : base(type, value, TokenType.Keyword) { }
     }
     public class SquartToken : Token
     {
-        public SquartToken(TokenName type, string value) : base(type, value,TokenType.Keyword) { }
+        public SquartToken(TokenName type, string value) : base(type, value, TokenType.Keyword) { }
     }
     public class LogToken : Token
     {
-        public LogToken(TokenName type, string value) : base(type, value,TokenType.Keyword) { }
+        public LogToken(TokenName type, string value) : base(type, value, TokenType.Keyword) { }
     }
     public class FunctionToken : Token                                                               ////////////
     {
-        public FunctionToken(TokenName type, string value) : base(type, value,TokenType.Keyword) { }
+        public FunctionToken(TokenName type, string value) : base(type, value, TokenType.Keyword) { }
     }
     public class PrintToken : Token
     {
-        public PrintToken(TokenName type, string value) : base(type, value,TokenType.Keyword) { }
+        public PrintToken(TokenName type, string value) : base(type, value, TokenType.Keyword) { }
     }
     public class VarToken : Token                                                                     ////////////
     {
-        public VarToken(TokenName type, string value) : base(type, value,TokenType.Keyword) { }
+        public VarToken(TokenName type, string value) : base(type, value, TokenType.Keyword) { }
     }
     public class EndToken : Token
     {
-        public EndToken() : base(TokenName.end, ";",TokenType.Symbol) { }
+        public EndToken() : base(TokenName.end, ";", TokenType.Symbol) { }
     }
 
     public class EOFToken : Token
     {
-        public EOFToken() : base(TokenName.EOF, "#",TokenType.Symbol) { }
+        public EOFToken() : base(TokenName.EOF, "#", TokenType.Symbol) { }
     }
 }
