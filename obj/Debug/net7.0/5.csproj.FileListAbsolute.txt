@@ -1,0 +1,30 @@
+C:\Users\Livi3\Documents\Proyectos de Pro\Hulk\5\obj\Debug\net7.0\5.csproj.AssemblyReference.cache
+C:\Users\Livi3\Documents\Proyectos de Pro\Hulk\5\obj\Debug\net7.0\5.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Livi3\Documents\Proyectos de Pro\Hulk\5\obj\Debug\net7.0\5.AssemblyInfoInputs.cache
+C:\Users\Livi3\Documents\Proyectos de Pro\Hulk\5\obj\Debug\net7.0\5.AssemblyInfo.cs
+C:\Users\Livi3\Documents\Proyectos de Pro\Hulk\5\obj\Debug\net7.0\5.csproj.CoreCompileInputs.cache
+C:\Users\Livi3\Documents\Proyectos de Pro\Hulk\5\bin\Debug\net7.0\5.exe
+C:\Users\Livi3\Documents\Proyectos de Pro\Hulk\5\bin\Debug\net7.0\5.deps.json
+C:\Users\Livi3\Documents\Proyectos de Pro\Hulk\5\bin\Debug\net7.0\5.runtimeconfig.json
+C:\Users\Livi3\Documents\Proyectos de Pro\Hulk\5\bin\Debug\net7.0\5.dll
+C:\Users\Livi3\Documents\Proyectos de Pro\Hulk\5\bin\Debug\net7.0\5.pdb
+C:\Users\Livi3\Documents\Proyectos de Pro\Hulk\5\obj\Debug\net7.0\5.dll
+C:\Users\Livi3\Documents\Proyectos de Pro\Hulk\5\obj\Debug\net7.0\refint\5.dll
+C:\Users\Livi3\Documents\Proyectos de Pro\Hulk\5\obj\Debug\net7.0\5.pdb
+C:\Users\Livi3\Documents\Proyectos de Pro\Hulk\5\obj\Debug\net7.0\5.genruntimeconfig.cache
+C:\Users\Livi3\Documents\Proyectos de Pro\Hulk\5\obj\Debug\net7.0\ref\5.dll
+C:\Users\Livi3\Documents\Programacion\2do Proyecto\5\bin\Debug\net7.0\5.exe
+C:\Users\Livi3\Documents\Programacion\2do Proyecto\5\bin\Debug\net7.0\5.deps.json
+C:\Users\Livi3\Documents\Programacion\2do Proyecto\5\bin\Debug\net7.0\5.runtimeconfig.json
+C:\Users\Livi3\Documents\Programacion\2do Proyecto\5\bin\Debug\net7.0\5.dll
+C:\Users\Livi3\Documents\Programacion\2do Proyecto\5\bin\Debug\net7.0\5.pdb
+C:\Users\Livi3\Documents\Programacion\2do Proyecto\5\obj\Debug\net7.0\5.csproj.AssemblyReference.cache
+C:\Users\Livi3\Documents\Programacion\2do Proyecto\5\obj\Debug\net7.0\5.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Livi3\Documents\Programacion\2do Proyecto\5\obj\Debug\net7.0\5.AssemblyInfoInputs.cache
+C:\Users\Livi3\Documents\Programacion\2do Proyecto\5\obj\Debug\net7.0\5.AssemblyInfo.cs
+C:\Users\Livi3\Documents\Programacion\2do Proyecto\5\obj\Debug\net7.0\5.csproj.CoreCompileInputs.cache
+C:\Users\Livi3\Documents\Programacion\2do Proyecto\5\obj\Debug\net7.0\5.dll
+C:\Users\Livi3\Documents\Programacion\2do Proyecto\5\obj\Debug\net7.0\refint\5.dll
+C:\Users\Livi3\Documents\Programacion\2do Proyecto\5\obj\Debug\net7.0\5.pdb
+C:\Users\Livi3\Documents\Programacion\2do Proyecto\5\obj\Debug\net7.0\5.genruntimeconfig.cache
+C:\Users\Livi3\Documents\Programacion\2do Proyecto\5\obj\Debug\net7.0\ref\5.dll
