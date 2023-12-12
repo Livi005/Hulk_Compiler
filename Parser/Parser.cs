@@ -56,7 +56,7 @@ public class Parser
             error.Add(new Errors(ErrorCode.Sintaxis, "debe declararse una variable poniendose el id"));
         }
 
-        if (code[position].name == TokenName.function && position == 0)
+        if (code[position].name == TokenName.function && donde_me_quede == 0)
         {
             if (code[position + 1].name == TokenName.id)
             {
@@ -66,7 +66,7 @@ public class Parser
                     donde_me_quede += 3;
                     List<Token> param = ParserID(error, new(), position + 3);
                     position = donde_me_quede;
-                    if (code[position].name == TokenName.id)                                         //!.................................
+                    if (code[position].name == TokenName.implic)                                         //!.................................
                     {
                         Context.IsDeclare_Func = true;
                         Function func = new Function(func_name.value, param, null!);

@@ -105,6 +105,7 @@ public class FuncCall : Expression
 
         func.scope.Value = Arguments;
         string result = func.Instructions.Evaluate();
+        Value = result;
         func.scope.Value = dicc;
 
         return result;

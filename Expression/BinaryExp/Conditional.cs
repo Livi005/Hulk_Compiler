@@ -34,11 +34,7 @@ public class AndExpression : ConditionalExpression
 
     public override string Evaluate()
     {
-        right!.Evaluate();
-        left!.Evaluate();
-
-
-        Value = (left.Value == "true") && (right.Value == "true") ? 1 : 0;
+        Value = (left.Evaluate() == "true") && (right.Evaluate() == "true") ? 1 : 0;
 
         if ((int)Value == 1)
             return "true";
@@ -76,11 +72,7 @@ public class OrExpression : ConditionalExpression
 
     public override string Evaluate()
     {
-        right!.Evaluate();
-        left!.Evaluate();
-
-
-        Value = (left.Value == "true") || (right.Value == "true") ? 1 : 0;
+        Value = (left!.Evaluate() == "true") || (right.Evaluate() == "true") ? 1 : 0;
 
         if ((int)Value == 1)
             return "true";
@@ -145,7 +137,7 @@ public class DistintExpression : ConditionalExpression
         left!.Evaluate();
 
 
-        Value = (double)left.Value! != (double)right.Value! ? 1 : 0;
+        Value = (double)(Convert.ToInt32(left!.Evaluate()) > Convert.ToInt32(right!.Evaluate()) ? 1 : 0);
 
         if ((int)Value == 1)
             return "true";
@@ -187,9 +179,9 @@ public class EqualExpression : ConditionalExpression
         left!.Evaluate();
 
 
-        Value = (double)left.Value! == (double)right.Value! ? 1 : 0;
+        Value = (double)(Convert.ToInt32(right.Value!) == Convert.ToInt32(left.Value!) ? 1 : 0);
 
-        if ((int)Value == 1)
+        if (Convert.ToInt32(Value) == 1)
             return "true";
 
         return "false";
@@ -229,8 +221,7 @@ public class MenorExpression : ConditionalExpression
         left!.Evaluate();
 
 
-        Value = (double)left.Value! < (double)right.Value! ? 1 : 0;
-
+        Value = (double)(Convert.ToInt32(left!.Evaluate()) < Convert.ToInt32(right!.Evaluate()) ? 1 : 0);
         if ((int)Value == 1)
             return "true";
 
@@ -267,13 +258,9 @@ public class MayorExpression : ConditionalExpression
 
     public override string Evaluate()
     {
-        right!.Evaluate();
-        left!.Evaluate();
+        Value = (double)(Convert.ToInt32(left!.Evaluate()) > Convert.ToInt32(right!.Evaluate()) ? 1 : 0);
 
-
-        Value = (double)left.Value! > (double)right.Value! ? 1 : 0;
-
-        if ((int)Value == 1)
+        if (Convert.ToInt32(Value) == 1)
             return "true";
 
         return "false";
@@ -313,7 +300,7 @@ public class MenorEqualExpression : ConditionalExpression
         left!.Evaluate();
 
 
-        Value = (double)left.Value! <= (double)right.Value! ? 1 : 0;
+        Value = (double)(Convert.ToInt32(left!.Evaluate()) <= Convert.ToInt32(right!.Evaluate()) ? 1 : 0);
 
         if ((int)Value == 1)
             return "true";
@@ -355,7 +342,7 @@ public class MayorEqualExpression : ConditionalExpression
         left!.Evaluate();
 
 
-        Value = (double)left.Value! >= (double)right.Value! ? 1 : 0;
+        Value = (double)(Convert.ToInt32(left!.Evaluate()) >= Convert.ToInt32(right!.Evaluate()) ? 1 : 0);
 
         if ((int)Value == 1)
             return "true";

@@ -293,6 +293,13 @@ public class Tokenizar
                         AddToken(TokenName.EqualEqual);
                         index = i + 1;
                     }
+                    else if(cadena[i + 1].CompareTo('>') == 0)
+                    {
+                        TokenValue += cadena[i + 1];
+
+                        AddToken(TokenName.implic);
+                        index = i + 1;
+                    }
                     else
                     {
                         AddToken(TokenName.equal);

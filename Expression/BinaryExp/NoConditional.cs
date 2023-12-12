@@ -26,7 +26,6 @@ public class Concat : BinaryExpression
 
         Type = ExpressionType.Text;
         return Left && Right;
-
     }
 
     public override string Evaluate()
@@ -53,7 +52,6 @@ public class Add : NoConditionalExpression
         right!.Scope(scope);
     }
 
-
     public override bool CheckSemantic(List<Errors> errors)
     {
         bool Right = right!.CheckSemantic(errors);
@@ -72,11 +70,7 @@ public class Add : NoConditionalExpression
 
     public override string Evaluate()
     {
-        right!.Evaluate();
-        left!.Evaluate();
-
-
-        Value = (double)right.Value! + (double)left.Value!;
+        Value = (double)(Convert.ToInt32(left!.Evaluate()) + Convert.ToInt32(right!.Evaluate()));
         return Value.ToString()!;
     }
 }
@@ -113,7 +107,7 @@ public class Sub : NoConditionalExpression
         left!.Evaluate();
 
 
-        Value = (double)right.Value! - (double)left.Value!;
+        Value = (double)(Convert.ToInt32(left!.Evaluate()) - Convert.ToInt32(right!.Evaluate()));
         return Value.ToString()!;
     }
 }
@@ -150,7 +144,7 @@ public class Start : NoConditionalExpression
         left!.Evaluate();
 
 
-        Value = (double)right.Value! * (double)left.Value!;
+        Value = (double)(Convert.ToInt32(left!.Evaluate()) * Convert.ToInt32(right!.Evaluate()));
         return Value.ToString()!;
     }
 
@@ -188,7 +182,7 @@ public class Div : NoConditionalExpression
         left!.Evaluate();
 
 
-        Value = (double)right.Value! / (double)left.Value!;
+        Value = (double)(Convert.ToInt32(left!.Evaluate()) / Convert.ToInt32(right!.Evaluate()));
         return Value.ToString()!;
     }
 
@@ -225,8 +219,7 @@ public class Pow : NoConditionalExpression
         right!.Evaluate();
         left!.Evaluate();
 
-
-        Value = (int)right.Value! ^ (int)left.Value!;
+        Value = (double)(Convert.ToInt32(left!.Evaluate()) ^ Convert.ToInt32(right!.Evaluate()));
         return Value.ToString()!;
     }
 
@@ -264,8 +257,7 @@ public class Mod : NoConditionalExpression
         left!.Evaluate();
 
 
-        Value = (double)right.Value! % (double)left.Value!;
+        Value = (double)(Convert.ToInt32(left!.Evaluate()) % Convert.ToInt32(right!.Evaluate()));
         return Value.ToString()!;
     }
-
 }
