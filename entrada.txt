@@ -1,0 +1,31 @@
+type D {
+    function sum () : Number => 4 + 5 ;
+};
+
+function prueba (a : Number) :Number
+{
+  let x = 4 in {
+    if (a < x)
+    {
+        return true ;
+    }
+    else {
+        return false ;
+    }; 
+  };
+};
+
+type A inherits B {};
+type B inherits C {};
+type C inherits A {};
+
+let x : String  = New D () , y = f()  , h : String = prueba("JJJJ" , 9) in x ;
+let z  = New D () , t : Boolean = z.sum(), edad = z.age in t ;
+let prueba1 = 4 , prueba2 = var_interna in "hola";
+if ( 4 < "hola")
+ {
+    print (2);
+ }
+ else {
+    print ("hello" + 4);
+ };
